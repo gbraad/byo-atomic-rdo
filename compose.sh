@@ -1,11 +1,14 @@
 #!/bin/sh
 
 pushd /home/working
-git clone https://github.com/CentOS/sig-atomic-buildscripts centos-atomic
 
-cd centos-atomic
-git checkout downstream
+git clone https://github.com/CentOS/sig-atomic-buildscripts \
+    -b downstream \
+    --depth 1 \
+    centos-atomic
 
-rpm-ostree compose tree --repo=/srv/repo ./centos-atomic-host.json
+rpm-ostree compose tree \
+    --repo=/srv/repo \
+    ./centos-atomic/centos-atomic-host.json
 
 popd
