@@ -2,13 +2,13 @@
 
 pushd /home/working
 
-git clone https://github.com/CentOS/sig-atomic-buildscripts \
+git clone https://gitlab.com/gbraad/rdo-atomic.git \
     -b downstream \
     --depth 1 \
-    centos-atomic
+    rdo-atomic
 
 rpm-ostree compose tree \
     --repo=/srv/repo \
-    ./centos-atomic/centos-atomic-host.json
+    ./rdo-atomic/rdo-atomic-host.json
 
 popd

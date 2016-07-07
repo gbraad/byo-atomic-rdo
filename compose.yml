@@ -3,14 +3,14 @@
 - hosts: localhost
 
   tasks:
-  - name: Clone CentOS-Atomic buildscripts
+  - name: Clone RDO-Atomic buildscripts
     git: >-
-      repo=https://github.com/CentOS/sig-atomic-buildscripts
+      repo=https://gitlab.com/gbraad/rdo-atomic.git
       version=downstream
       depth=1
-      dest=/home/working/centos-atomic
+      dest=/home/working/rdo-atomic
 
-  - name: Compose CentOS-Atomic tree
+  - name: Compose RDO-Atomic tree
     command: >-
-      chdir=/home/working/centos-atomic/
-      rpm-ostree compose tree --repo=/srv/repo ./centos-atomic-host.json
+      chdir=/home/working/rdo-atomic/
+      rpm-ostree compose tree --repo=/srv/repo ./rdo-atomic-host.json

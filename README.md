@@ -1,19 +1,18 @@
-Build Your Own Atomic - CentOS
-==============================
+Build Your Own Atomic - RDO
+===========================
 
 
 ## Artifacts
 
-  * [Remote](https://gbraad.gitlab.io/byo-atomic-centos/)
-  * [Builds](https://gitlab.com/gbraad/byo-atomic-centos/builds)
+  * [Remote](https://gbraad.gitlab.io/byo-atomic-rdo/)
+  * [Builds](https://gitlab.com/gbraad/byo-atomic-rdo/builds)
 
 
 ## Usage
-Note: _Currently the CentOS build does not provide a usable remote_ *[[1][ref1]]
 
 ```
-ostree remote add --set=gpg-verify=false centos-atomic-continuous https://ci.centos.org/artifacts/sig-atomic/rdgo/centos-continuous/ostree/repo/
-rpm-ostree rebase centos-atomic-continuous:centos-atomic-host/7/x86_64/devel/continuous
+ostree remote add --set=gpg-verify=false byo-atomic-rdo https://gbraad.gitlab.io/byo-atomic-rdo/
+rpm-ostree rebase byo-atomic-rdo:centos-atomic-host/7/x86_64/openstack
 systemctl reboot
 ```
 
@@ -22,5 +21,3 @@ systemctl reboot
 
   * [base](http://gitlab.com/gbraad/byo-atomic)
   * [ostree](https://github.com/gbraad/scratchpad/blob/master/technology/ostree.md)
-
-  * [ref1]: https://github.com/gbraad/byo-atomic-base/issues/4 "Unable to find package 'yum' specified in remove-files-from"
