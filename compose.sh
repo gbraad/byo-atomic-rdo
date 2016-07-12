@@ -15,7 +15,7 @@ rpm-ostree compose tree \
 cat << EOF > /srv/repo/index.html
 <html><body>
 <a href="https://gitlab.com/gbraad/byo-atomic-rdo/">byo-atomic-rdo</a>
-</body></html
+</body></html>
 EOF
 
 popd
