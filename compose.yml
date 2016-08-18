@@ -8,9 +8,9 @@
       repo=https://gitlab.com/gbraad/rdo-atomic.git
       version=downstream
       depth=1
-      dest=/home/working/rdo-atomic
+      dest=/workspace/rdo-atomic
 
   - name: Compose RDO-Atomic tree
     command: >-
-      chdir=/home/working/rdo-atomic/
+      chdir=/workspace/rdo-atomic/
       rpm-ostree compose tree --repo=/srv/repo ./rdo-atomic-host.json
